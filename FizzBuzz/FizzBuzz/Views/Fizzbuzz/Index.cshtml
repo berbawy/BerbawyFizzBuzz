@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<div class="form-group">
+    <input type="text" id="txtValue" />
+</div>
+<div class="form-group">
+    <input type="button" id="btnAction" value="Show Fizz Buzz" />
+</div>
+<div class="form-group">
+    <label id="lblResults">
+
+    </label>
+</div>
+
+<script type="text/javascript">
+    function Fizzbuzz() {
+        $.ajax({
+                url: "/Fizzbuzz/GetFizzBuzz",
+                type: "post",
+                dataType: "json",
+                data: { txtValue: $('#txtValue').val() },
+                success: function (data) {
+                    $('#lblResults').val(data.results);
+                },
+                error: function (data) {
+                    
+                },
+                complete: function () {
+                   
+                }
+            });
+
+    }
+</script>
