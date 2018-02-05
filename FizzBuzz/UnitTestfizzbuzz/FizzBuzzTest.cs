@@ -51,6 +51,16 @@ namespace UnitTestfizzbuzz
 
         }
 
+        [TestMethod]
+        public void TestValue20()
+        {
+            FizzbuzzController FBC = new FizzbuzzController();
+            string txt = "20";
+            string Result = FBC.GetFizzBuzzResult(txt);
+            string ExpR = "1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz 11 Fizz 13 14 FizzBuzz 16 17 Fizz 19 Buzz";
+            Assert.AreEqual(ExpR, Result);
+        }
+
     }
 }
 
